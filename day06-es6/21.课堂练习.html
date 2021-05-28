@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <script>
+        let btn = document.getElementById('btn')
+
+        btn.onclick = function(){
+            const promise = new Promise((resolve,reject) =>{
+                setTimeout(() =>{
+                    resolve('promise1成功')
+                    reject('promise1失败')
+                },1000)
+            })
+
+            //注意：如果像下面这种写法去写，那么promise成功则调用then的回调，如果promise失败就调用catch的回调
+            //注意：如果使用了catch，都是在then后面直接跟一个catch，并且then的第二个回调就不声明了
+            promise
+                .then((value) =>{
+                    console.log('promise成功了')
+                })
+                .catch((err) =>{
+                    console.log('catch','promise1失败')
+                })
+                .finally(() =>{
+                    console.log('不管promise成功还是失败都会调用')
+                })
+        }
+    </script>
+</body>
+</html>

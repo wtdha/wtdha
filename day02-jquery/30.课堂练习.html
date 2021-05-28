@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body {
+        height: 8000px;
+      }
+
+      a {
+        color: #fff;
+      }
+
+      .actGotop {
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        width: 150px;
+        height: 195px;
+        display: none;
+        z-index: 100;
+      }
+
+      .actGotop a,
+      .actGotop a:link {
+        width: 150px;
+        height: 195px;
+        display: inline-block;
+        background: url(./14-小火箭/images/gotop.png) no-repeat;
+        outline: none;
+      }
+
+      .actGotop a:hover {
+        width: 150px;
+        height: 195px;
+        background: url(./14-小火箭/images/gotop.gif) no-repeat;
+        outline: none;
+      }
+    </style>
+</head>
+<body>
+    <div class="actGotop"><a href="javascript:;" title="Top"></a></div>
+    <script src="./jquery-1.12.4.js"></script>
+    <script>
+        $(window).scroll(function(){
+            if($(window).scrollTop() >= 1000){
+                $('.actGotop').stop(true).fadeIn()
+            }else{
+                $('.actGotop').stop(true).fadeOut()
+            }
+        })
+
+        $('.actGotop').click(function(){
+            $('html,body').animate({
+                scrollTop:0,
+            })
+        })
+    </script>
+</body>
+</html>

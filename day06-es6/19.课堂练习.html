@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <script>
+        let btn  = document.getElementById('btn')
+        //1.创建一个promise对象
+        //2.执行promise的同步回调
+        //3.在同步回调中计时
+        //4.将promise对象打印在控制台 状态：未定义pending
+        //5.promise.then执行，立刻返回一个新的promise2
+        //6.立刻打印新的promise2
+        //7.时间到了，在定时器的回调中，调用了resolve（ok），所以promise的状态被修改为成功（fulfilled）
+        //8.promised的then方法的第一个 回调就被调用了
+        //9.当promise.then的第一个回调执行完毕之后，promise2的状态就被修改了
+
+        btn.onclick = function(){
+            const promise = new Promise((resolve,reject) =>{
+                console.log('promise的同步回调执行了')
+                setTimeout(() =>{
+                    // reject('fail')
+                    resolve('ok')
+                },1000)
+            })
+            console.log(1,promise);
+            promise
+              .then(
+                (value) =>{
+                    console.log('promise成功了',value)
+
+                    return new Promise((resolve,reject) =>{
+                        resolve('promise2-aaa')
+                        // reject('promise2-ccc')
+                    })
+                },
+                (value) =>{
+                    console.log('promise失败了',value)
+                    return new Promise((resolve,reject) =>{
+                        reject('嘿嘿嘿嘿')
+                    })
+                }
+            )
+            .then(
+                (value) =>{
+                    console.log('promise2','成功了',value)
+                },
+                (value) =>{
+                    console.log('promise2','失败了',value)
+                }
+            )
+        }
+    </script>
+</body>
+</html>
