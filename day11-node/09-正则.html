@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 只要字符串中包含了字符a就符合要求
+        // let reg = /a/
+        // console.log(reg.test('abc'))true
+
+
+
+        // 特殊字符
+        // reg = /\d/   //只要字符串中包含数字就可以
+        // console.log(reg.test('a1'))
+
+        // reg = /\D/   //只要字符串中包含非数字就可以
+        // console.log(reg.test('c1'))true
+
+        // word
+        //  reg = /\w/   //只要包含数字字母下划线就可以
+        // console.log(reg.test("！"))false
+
+        // reg = /\W/   //只要包含非字母 非下划线 非数字就可以
+        // console.log(reg.test('a！'))true
+
+
+        // space
+        // reg = /\s/   //包含任意空白符就可以 \n  回车  tab键
+        // console.log(reg.test('k  '))true
+
+        // reg = /\S/   //包含任意非空白符就可以
+        // console.log(reg.test('  1'))true
+
+
+        // reg = /./   //包含除换行符以外的任何字符
+        // console.log(reg.test('\r')) false  里面不能有其他
+
+
+        // reg = /^a/   //以什么什么开头  表示必须以a开头 后面不管
+        // console.log(reg.test('adva')) true
+
+
+        // reg = /a$/   //以什么结尾   表示必须以a结尾
+        // console.log(reg.test('abva'))   true
+
+
+        // reg = /^ab$/    //必须是ab两个字符，其他不能写
+        // console.log(reg.test('abv'))  false
+
+
+
+
+        // 限定符
+        // reg = /^a*b$/   //a可以不写也可以写多个a，b只能是一个
+        // console.log(reg.test('aaaabb'))   false   只能写一个b
+
+        // reg = /^a*b+$/     //a是0-多个，b至少要有一个  1-多个
+        // console.log(reg.test('aaaaabbbbbb'))
+
+        // reg = /^a?b$/     //b或者是ab
+        // console.log(reg.test('aba'))  false   
+
+        // reg = /^a{2}b{3,}$/     //两个a，最少三个b
+        // console.log(reg.test('aabbb'))
+
+
+        // reg = /^ab{3,6}$/     //a一个，b最少3-6个
+        // console.log(reg.test('abbbbbb'))
+
+
+
+        // 其他字符
+        // reg = /^a[bef]c$/      //第一个a，中间可以是bef任意的一个，最后还是c，中括号值占一个位置
+        // console.log(reg.test('aec'))
+
+
+        // reg = /^a[^bef]c$/    //第一个a，中间除了bef其他任何都可以，最后还是c
+        // console.log(reg.test('awc'))  true
+
+
+        // reg = /^a\.b$/     //转义符可以把一个特殊字符转普通字符
+        // console.log(reg.test('a.b'))  true
+
+
+        // reg = /^a|b$/    //以a开头或者以b结尾，中间写啥都可以
+        // console.log(reg.test('ajjidhc'))   true 以a开头
+
+
+        // reg = /^ae|fb$/     //以ae开头或者是以fb结尾
+        // console.log(reg.test('dddfb'))
+
+
+        // reg = /^a(e|f)b$/     //aeb或afb
+        // console.log(reg.test('afb'))
+
+
+        // reg = /^(ab){3}$/    //只能是ababab
+        // console.log(reg.test('ababab'))
+
+
+        // reg = /^[a-z]$/      //可以写任何的英文，只能写一个-小写
+        // console.log(reg.test('n'))
+
+
+        //  reg = /^[A-Za-z]$/     //大写和小写都可以
+        // console.log(reg.test('k'))
+
+
+
+        // 正则案例：
+
+        // 验证手机号
+        // 手机号规则： 1 345636
+        // let phoneReg = /^1[345636]\d{9}$/
+
+        // let [e = 2, f = 20] = [10];
+        //  console.log(e,f)//10 20
+
+
+       
+        let [a,b, ...newarr] = [1,2,3,4,5,5,6,,7,8,9]
+          console.log(newarr);
+
+
+
+    </script>
+</body>
+</html>

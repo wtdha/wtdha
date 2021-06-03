@@ -76,7 +76,7 @@
         //     a,
         //     b:[b1,b2,b3],
         // } = obj
-        // console.log(a,b1,b2,b3)
+        // console.log(a,b1,b2,b3)  1 2 3 4
 
 
 
@@ -86,14 +86,14 @@
         // }
         // console.log(fn(1,2))//3
 
-        // let btn = document.getElementById('btn')
-        // btn.onclick = function(){
-        //     console.log(this)
+        //      let btn = document.getElementById('btn')
+        //      btn.onclick = function(){
+        //          console.log(this)
 
-        //     setTimeout(() => {
-        //         this.style.backgroundColor = 'yellow'
-        //     },1000)
-        // }
+        //          setTimeout(() => {
+        //              this.style.backgroundColor = 'yellow'
+        //         },1000)
+        //   }
 
 
         // let f3 = () =>{
@@ -341,7 +341,7 @@
 
         // //解构赋值
         // //  let [a,b, ...newarr] = [1,2,3,4,5,5,6,,7,8,9]
-        // //  console.log(newarr);
+        // //  console.log(newarr);  3 4 5 5 6 undefined 7 8 9
 
         //  let [a, b, ...newarr] = [1, 2, 3, 4, 5, 5, 6, 8, 9];
         //  console.log(newarr);//[3, 4, 5, 5, 6, 8, 9]
@@ -438,11 +438,103 @@
 
 
 
-        {
-            //多维数组 想拉平 可以传入参数
-            let arr = [1, 2, [3, [5, 6, 7]]];
-            console.log(arr.flat(2))//[1,2,3,4,5,6,7]
-        }
+        // {
+        //     //多维数组 想拉平 可以传入参数
+        //     let arr = [1, 2, [3, [5, 6, 7]]];
+        //     console.log(arr.flat(2))//[1,2,3,4,5,6,7]
+        // }
+
+
+        // console.log(a);
+        // if (true) {
+        //     var a = 10;undefined
+        // }
+        // console.log(a);//10
+
+
+        // var b = 1;
+        // fn1();
+        // function fn1() {
+        //     console.log(b);//undefined
+        //     if (true) {
+        //         var b = 2;
+        //     }
+        // }
+
+
+        // let b = 1;
+        // fn1();
+        // function fn1() {
+        //     //当前的作用于没有b，沿着作用于寻找到全局的b
+        //     console.log(b);//1
+        //     if (true) {
+        //         //只在当前的作用于中生效
+        //         let b = 2;
+        //     }
+        // }
+
+
+        // for (let i = 0; i < 4; i++) {
+        //     console.log(i);0 1 2 3
+        // }
+        // console.log(i);报错
+
+        // function fn() {
+        //     return [1, 2, 3, 4];
+        // }
+        // let [a, b, c, d] = fn();
+        // console.log(a, b, c, d);1 2 3 4
+
+
+        // function fn() {
+        //     return { foo: "hello", hoo: "word" };
+        // }
+        // let { foo } = fn();
+        // console.log(foo);  hello
+
+
+        // function fn(x, y, z) {
+        //     console.log(x, y, z)
+        // }
+        // fn(...arr);
+
+
+        //  let arr2 = [1, 2, 3];
+        //  let arr3 = [...arr2];
+        //  arr3.push(4);
+        //  console.log(arr2, arr3);
+
+        // let arr4 = [...arr2, ...arr3];
+        // console.log(arr4);[1231234]
+
+
+        // function fn1(a, b) {
+        //     // b = b || "world";
+        //     if (typeof b === "undefined") {
+        //         b = "world";
+        //     }
+        //     console.log(a, b);
+        // }
+        // fn1("hello", "");
+        // fn1("hello");
+        // fn1("hello", "world");
+
+
+
+        // function fn3(...arg) {
+        //     console.log(arg);
+        // }
+        // fn3(1, 2, 3, 4, 5)[12345]
+
+
+        // function fn4(a, b, ...arg) {
+        //     console.log(a, b, arg);12[345]
+        // }
+        // fn4(1, 2, 3, 4, 5)
+
+
+        
+
     </script>
 </body>
 
